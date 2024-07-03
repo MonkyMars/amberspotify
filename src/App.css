@@ -34,5 +34,10 @@
 }
 
 @media and screen(max-width: 1080px) {
-  
+  #kaassaus{
+    width: 90vw;
+  }
+  .focus{
+    transform: scale(1.1);
+  }
 }
