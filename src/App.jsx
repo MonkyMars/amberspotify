@@ -6,7 +6,7 @@ export default function App() {
     <>
     <main id='main' style={{width: "100vw", height: "100vh", backgroundColor: "#555755", left: "0", top: "0", position: "fixed", zIndex: "0", overflowY: "scroll", overflowX: "hidden", display: "flex", userSelect: "none"}}>
       <div className="cards-container">
-       <Cards Title="Green Eyes :: Sienna" Color="#5182e8" Artist="Nothing But Thieves" Image="DeadClubCity(Deluxe).jpg" Lyrics1="'Cause I, I'll love you forever, you know" Lyrics2="And we're gonna beat this thing" Lyrics2Top="25px" audio="./greeneyessiena.mp3"/>
+       <Cards Title="Green Eyes :: Sienna" Color="#5182e8" Artist="Nothing But Thieves" Image="DeadClubCity(Deluxe).jpg" Lyrics1="'Cause I, I'll love you forever, you know" Lyrics2="And we're gonna beat this thing" Lyrics2Top="25px" Lyrics2TopPhone="50px" audio="./greeneyessiena.mp3"/>
 
       <Cards Title="Holy Spirit" Color="#cd6d5f" Artist="Stormzy" Image="ThisIsWhatIMean.jpg" Lyrics1="You make me feel so hopeful" Lyrics2="I'm just glad I know you" Lyrics2Top="0px" audio="./holyspirit.mp3"/>
 
