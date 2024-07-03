@@ -40,7 +40,7 @@ export default function App() {
 
         <Cards Title="You Get Me So High" Color="#8f6e76" Artist="The Neighborhood" Image="yougetmesohigh.jpg" Lyrics1="You're my best friend, I'll love you forever" Lyrics2="You're the greatest" Lyrics2Top="25px" Lyrics2TopPhone="40px" audio="./yougetmesohigh.mp3"/>
 
-        <Cards Title="Wet Dreamz" Color="#2478ca" Artist="J. Cole" Image="wetdreamz.jpg" Lyrics1="'Cause when I seen the thighs on her and 'em hips on her and 'em lips on her" Lyrics2="Got me daydreamin', man, what?" Lyrics2Top="60px" Lyrics2TopPhone="40px" audio="./wetdreamz.mp3"/>
+        <Cards Title="Wet Dreamz" Color="#2478ca" Artist="J. Cole" Image="wetdreamz.jpg" Lyrics1="'Cause when I seen the thighs on her and 'em hips on her and 'em lips on her" Lyrics2="Got me daydreamin', man, what?" Lyrics2Top="60px" Lyrics2TopPhone="55px" audio="./wetdreamz.mp3"/>
 
         <Cards Title="Real Love Song" Color="#c85200" Artist="Nothing But Thieves" Image="moralpanic.jpg" Lyrics1="Got a thing about you" Lyrics2="And it won't go away, no" Lyrics2Top="0px" audio="./reallovesong.mp3"/>
         
