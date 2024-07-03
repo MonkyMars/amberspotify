@@ -33,7 +33,7 @@
   filter: blur(5px) !important;
 }
 
-@media and screen(max-width: 1080px) {
+@media screen and (max-width: 1080px) {
   #kaassaus{
     width: 90vw;
   }
