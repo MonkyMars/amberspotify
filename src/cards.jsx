@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-export default function Cards({ Title, Image, Artist, Color, Lyrics1, Lyrics2, Lyrics2Top, audio }) {
+export default function Cards({ Title, Image, Artist, Color, Lyrics1, Lyrics2, Lyrics2Top, Lyrics2TopPhone, audio }) {
     const [focused, setFocused] = useState(false);
       
     function Focus() {
