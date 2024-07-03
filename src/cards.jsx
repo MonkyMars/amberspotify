@@ -30,7 +30,8 @@ export default function Cards({ Title, Image, Artist, Color, Lyrics1, Lyrics2, L
     }, [focused]);
 
     const topPosition = isSmallScreen ? Lyrics2TopPhone : Lyrics2Top;
-
+    const fontSize = isSmallScreen ? 18 : 24;
+    
     function Focus() {
         setTimeout(() => {
             setFocused(true);
@@ -53,7 +54,7 @@ export default function Cards({ Title, Image, Artist, Color, Lyrics1, Lyrics2, L
                 style={{ width: "55px", borderRadius: "10px", left: "15px", top: "15px", position: "relative", margin: "0" }}
                 alt='Album Art'
             />
-            <h1 style={{ left: "25%", fontSize: "24px", position: "relative", top: "-45px", fontFamily: "poppins", margin: "0", fontWeight: "600", color: "#00020a" }}>
+            <h1 style={{ left: "25%", fontSize: fontSize, position: "relative", top: "-45px", fontFamily: "poppins", margin: "0", fontWeight: "600", color: "#00020a" }}>
                 {Title}
             </h1>
             <label
