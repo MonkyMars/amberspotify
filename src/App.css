@@ -33,3 +33,6 @@
   filter: blur(5px) !important;
 }
 
+@media and screen(max-width: 1080px) {
+  
+}
