@@ -1,9 +1,23 @@
 import React, { useState } from 'react';
 import './App.css';
 
-export default function Cards({ Title, Image, Artist, Color, Lyrics1, Lyrics2, Lyrics2Top, Lyrics2TopPhone0, audio }) {
+export default function Cards({ Title, Image, Artist, Color, Lyrics1, Lyrics2, Lyrics2Top, Lyrics2TopPhone, audio }) {
     const [focused, setFocused] = useState(false);
-      
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1080);
+
+     useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 1080);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+     const topPosition = isSmallScreen ? Lyrics2TopPhone : Lyrics2Top;
+    
     function Focus() {
         setTimeout(() => {
             setFocused(true);
@@ -52,7 +66,7 @@ export default function Cards({ Title, Image, Artist, Color, Lyrics1, Lyrics2, L
             </p>
             <p
                 className='Lyric2'
-                style={{ left: "5%", top: Lyrics2Top, position: "relative", fontFamily: "poppins", fontSize: "19.5px", margin: "0" }}
+                style={{ left: "5%", top: topPosition, position: "relative", fontFamily: "poppins", fontSize: "19.5px", margin: "0" }}
             >
                 {Lyrics2}
             </p>
