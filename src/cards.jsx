@@ -1,23 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 export default function Cards({ Title, Image, Artist, Color, Lyrics1, Lyrics2, Lyrics2Top, Lyrics2TopPhone, audio }) {
     const [focused, setFocused] = useState(false);
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1080);
 
-     useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 1080);
-    };
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 1080);
+        };
 
-    window.addEventListener('resize', handleResize);
+        window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-     const topPosition = isSmallScreen ? Lyrics2TopPhone : Lyrics2Top;
-    
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (focused) {
+            setTimeout(() => {
+                document.getElementById("main").style.overflowY = "hidden";
+            }, 100);
+        } else {
+            setTimeout(() => {
+                document.getElementById("main").style.overflowY = "scroll";
+            }, 100);
+        }
+    }, [focused]);
+
+    const topPosition = isSmallScreen ? Lyrics2TopPhone : Lyrics2Top;
+
     function Focus() {
         setTimeout(() => {
             setFocused(true);
@@ -27,16 +40,6 @@ export default function Cards({ Title, Image, Artist, Color, Lyrics1, Lyrics2, L
     function UnFocus(event) {
         event.stopPropagation();
         setFocused(false);
-    }
-
-    if (focused) {
-        setTimeout(() => {
-            document.getElementById("main").style.overflowY = "hidden";
-        }, 100);
-    } else {
-        setTimeout(() => {
-            document.getElementById("main").style.overflowY = "scroll";
-        }, 100);
     }
 
     return (
@@ -70,13 +73,13 @@ export default function Cards({ Title, Image, Artist, Color, Lyrics1, Lyrics2, L
             >
                 {Lyrics2}
             </p>
-            
+
             {focused && (
                 <>
                     <label onClick={UnFocus} style={{ fontWeight: "600", fontFamily: "poppins", width: "10px", right: "10px", top: "5px", position: "absolute", margin: "0", cursor: "pointer", display: "block", transform: "scale(0.7)" }}>
                         X
                     </label>
-                    <audio src={audio} preload="auto" controls style={{width: "400px", height: "25px", bottom: "5px", left: "50%", transform: "translateX(-50%) scale(0.4)", position: "fixed", zIndex: "52", display: "flex !important", borderRadius: "10px"}}></audio>
+                    <audio src={audio} preload="auto" controls style={{ width: "400px", height: "25px", bottom: "5px", left: "50%", transform: "translateX(-50%) scale(0.4)", position: "fixed", zIndex: "52", display: "flex", borderRadius: "10px" }}></audio>
                 </>
             )}
         </div>
