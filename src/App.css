@@ -38,6 +38,6 @@
     width: 80vw !important;
   }
   .focus{
-    transform: translate(-0, -0) scale(1.1) !important;
+    transform: translate(-50%, -50%) scale(1.1) !important;
   }
 }
